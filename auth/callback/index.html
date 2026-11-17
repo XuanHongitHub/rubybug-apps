@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authorization Callback | RubyBug Apps</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Tailwind CSS & Iconify -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      background-image: url("/assets/images/noise.svg");
+    }
+  </style>
+</head>
+<body class="selection:bg-[#FF4500] selection:text-white min-h-screen flex flex-col justify-between">
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="py-8 border-b border-white/5">
+    <div class="container mx-auto px-6 flex items-center justify-between">
+      <a href="/" class="flex items-center hover:opacity-90 transition-opacity">
+        <img src="/assets/images/logo.svg" alt="RubyBug Apps" class="h-9 w-auto">
+      </a>
+      <a href="/" class="text-xs font-mono uppercase tracking-widest text-gray-400 hover:text-white transition-colors">
+        &larr; Return to RubyBug Home
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-20 flex items-center justify-center relative z-10">
+    <div class="max-w-xl w-full p-8 md:p-12 rounded-3xl bg-[#111] border border-white/10 shadow-2xl text-center space-y-6">
+      
+      <!-- Status Icon -->
+      <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 mx-auto flex items-center justify-center text-[#FF4500]">
+        <iconify-icon icon="lucide:shield-check" class="text-3xl"></iconify-icon>
+      </div>
+
+      <div>
+        <span class="text-xs font-mono uppercase tracking-widest text-[#FF4500] font-bold block mb-2">OAuth 2.0 Endpoint</span>
+        <h1 class="text-3xl font-serif text-white font-medium mb-3">Authorization Gateway</h1>
+        <p class="text-xs md:text-sm text-gray-400 leading-relaxed font-light">
+          This secure endpoint receives and processes official authorization callbacks for RubyBug Apps integrations.
+        </p>
+      </div>
+
+      <!-- Live Payload / Status Card -->
+      <div class="p-4 rounded-xl bg-black/50 border border-white/10 text-left font-mono text-xs space-y-2 text-gray-300">
+        <div class="flex justify-between border-b border-white/5 pb-2">
+          <span class="text-gray-500">Protocol</span>
+          <span class="text-emerald-400">OAuth 2.0 Authorization Code</span>
+        </div>
+        <div class="flex justify-between border-b border-white/5 pb-2">
+          <span class="text-gray-500">Security</span>
+          <span class="text-white">TLS 1.3 / HTTPS Enforced</span>
+        </div>
+        <div class="flex justify-between border-b border-white/5 pb-2">
+          <span class="text-gray-500">App Entity</span>
+          <span class="text-white">RubyBug LLC</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-500">Status</span>
+          <span id="auth-status" class="text-[#FF4500]">Listening for partner callback...</span>
+        </div>
+      </div>
+
+      <!-- Informational note -->
+      <p class="text-[11px] text-gray-500 leading-relaxed">
+        If you are a platform reviewer or auditor, this URL is the designated redirect destination configured for token exchange with authorized seller marketplaces (TikTok Shop Open API, Shopify Partner API, Amazon SP-API).
+      </p>
+
+      <div class="pt-4 border-t border-white/5 flex justify-center gap-6 text-xs text-gray-400">
+        <a href="/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="/terms.html" class="hover:text-white transition-colors">Terms of Service</a>
+        <span class="text-white/20">&bull;</span>
+        <a href="/contact.html" class="hover:text-white transition-colors">Developer Contact</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-white/5 text-center text-xs text-gray-500 font-mono">
+    &copy; 2026 RubyBug LLC. All rights reserved. 1001 S MAIN ST, STE 600, KALISPELL, MT 59901-1498.
+  </footer>
+
+  <script>
+    // Check if authorization code or error was passed in URL query
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const authCode = params.get('auth_code');
+    const state = params.get('state');
+    const err = params.get('error') || params.get('error_description');
+
+    const statusEl = document.getElementById('auth-status');
+    if (code || authCode) {
+      statusEl.textContent = 'Authorization code received. Processing handshake...';
+      statusEl.className = 'text-emerald-400 font-semibold';
+    } else if (err) {
+      statusEl.textContent = 'Error: ' + err;
+      statusEl.className = 'text-rose-400 font-semibold';
+    }
+  </script>
+</body>
+</html>
