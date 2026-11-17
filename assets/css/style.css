@@ -2847,11 +2847,7 @@ body {
 }
 
 .status-dot-pulse {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  display: none;
 }
 
 /* Responsive Overrides */

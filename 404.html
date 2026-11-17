@@ -55,13 +55,7 @@
       mix-blend-mode: overlay;
       background-image: url("assets/images/noise.svg");
     }
-    @keyframes pulseDot {
-      0%, 100% { box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.25); }
-      50% { box-shadow: 0 0 0 6px rgba(255, 69, 0, 0.5); }
-    }
-    .pulse-dot {
-      animation: pulseDot 2s infinite ease-in-out;
-    }
+
   </style>
 </head>
 <body class="selection:bg-[#FF4500] selection:text-white">
@@ -71,9 +65,8 @@
     <!-- Navigation -->
     <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-8">
       <div class="container mx-auto px-6 flex items-center justify-between">
-        <a href="index.html" class="flex items-center gap-3 text-2xl font-bold tracking-tighter font-serif text-white hover:opacity-90 transition-opacity">
-          <span class="w-8 h-8 rounded-lg bg-[#FF4500] flex items-center justify-center text-white text-base font-sans font-bold shadow-[0_0_20px_rgba(255,69,0,0.5)]">R</span>
-          <span>RubyBug.</span>
+        <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity">
+          <img src="assets/images/logo.svg" alt="RubyBug Apps" class="h-9 w-auto">
         </a>
         
         <div class="hidden lg:flex items-center space-x-8">
@@ -118,7 +111,6 @@
 
       <div class="container mx-auto px-6 relative z-10 text-center max-w-2xl">
         <div class="reveal mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-xs uppercase tracking-widest text-white/90">
-          <span class="w-2 h-2 rounded-full bg-[#FF4500] pulse-dot"></span>
           <span>HTTP 404 &bull; Resource Void</span>
         </div>
 
@@ -150,9 +142,8 @@
       <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
-            <div class="flex items-center gap-2 mb-4">
-              <span class="w-6 h-6 rounded-md bg-[#FF4500] flex items-center justify-center text-white text-xs font-bold">R</span>
-              <span class="text-base font-bold tracking-tight font-serif text-white">RubyBug Apps</span>
+            <div class="mb-4">
+              <img src="assets/images/logo.svg" alt="RubyBug Apps" class="h-7 w-auto">
             </div>
             <p class="text-xs text-gray-400">Centralized eCommerce management architecture.</p>
           </div>
@@ -172,6 +163,11 @@
               <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
               <li><a href="contact.html" class="hover:text-white">Contact</a></li>
             </ul>
+            <div class="mt-4 text-xs text-gray-500 font-mono leading-relaxed">
+              1001 S MAIN ST<br>
+              STE 600<br>
+              KALISPELL, MT 59901-1498
+            </div>
           </div>
           <div>
             <p class="text-[11px] uppercase tracking-widest text-white/40 font-mono mb-3">LEGAL</p>
