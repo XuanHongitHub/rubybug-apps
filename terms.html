@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | RubyBug Apps</title>
+  <meta name="description" content="Read the RubyBug Apps Terms of Service from RubyBug LLC, including permitted use of the public website and third-party integrations.">
+  <link rel="canonical" href="https://rubybugllc.com/terms.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RubyBug Apps">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Terms of Service | RubyBug Apps">
+  <meta property="og:description" content="Read the RubyBug Apps Terms of Service from RubyBug LLC, including permitted use of the public website and third-party integrations.">
+  <meta property="og:url" content="https://rubybugllc.com/terms.html">
+  <meta property="og:image" content="https://rubybugllc.com/assets/images/logo.svg">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Tailwind CSS & Iconify -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      background-image: url("assets/images/noise.svg");
+    }
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.25); }
+      50% { box-shadow: 0 0 0 6px rgba(255, 69, 0, 0.5); }
+    }
+    .pulse-dot {
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#FF4500] selection:text-white">
+  <div class="min-h-screen bg-[#050505]">
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-8">
+      <div class="container mx-auto px-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 text-2xl font-bold tracking-tighter font-serif text-white hover:opacity-90 transition-opacity">
+          <span class="w-8 h-8 rounded-lg bg-[#FF4500] flex items-center justify-center text-white text-base font-sans font-bold shadow-[0_0_20px_rgba(255,69,0,0.5)]">R</span>
+          <span>RubyBug.</span>
+        </a>
+        
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+          <a href="features.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Features</a>
+          <a href="how-it-works.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">How It Works</a>
+          <a href="integrations.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Integrations</a>
+          <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">About Us</a>
+          <a href="faq.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">FAQ</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium bg-white text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.15)]">
+            Contact Us
+          </a>
+          <button id="mobile-menu-toggle" type="button" class="lg:hidden w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10" aria-label="Toggle Navigation">
+            <iconify-icon icon="lucide:menu" class="text-xl"></iconify-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobile-nav-panel" class="hidden lg:hidden bg-[#0a0a0a]/95 border-b border-white/10 px-6 py-6 mt-4 backdrop-blur-xl">
+        <div class="flex flex-col space-y-4">
+          <a href="index.html" class="text-base text-gray-400 hover:text-white">Home</a>
+          <a href="features.html" class="text-base text-gray-400 hover:text-white">Features</a>
+          <a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a>
+          <a href="integrations.html" class="text-base text-gray-400 hover:text-white">Integrations</a>
+          <a href="about.html" class="text-base text-gray-400 hover:text-white">About Us</a>
+          <a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a>
+          <a href="contact.html" class="text-base text-[#FF4500] font-semibold">Contact Our Team &rarr;</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="relative pt-40 pb-20 overflow-hidden border-b border-white/5">
+      <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
+        <div class="reveal mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-xs uppercase tracking-widest text-white/90">
+          <span class="w-2 h-2 rounded-full bg-[#FF4500] pulse-dot"></span>
+          <span>Terms &bull; Legal Framework</span>
+        </div>
+        <h1 class="reveal text-5xl md:text-7xl font-medium tracking-tight mb-8 font-serif text-white">
+          Terms of Service. <br />
+          <span class="italic font-light text-[#FF4500]">RubyBug Apps.</span>
+        </h1>
+        <p class="reveal text-sm text-gray-400 max-w-xl mx-auto font-mono" style="transition-delay: 150ms;">
+          Draft for company review. Last updated November 17, 2026.
+        </p>
+      </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="py-24 relative">
+      <div class="container mx-auto px-6 max-w-4xl space-y-12 text-gray-300 leading-relaxed font-light text-sm">
+        
+        <div class="reveal p-6 rounded-2xl bg-[#111] border border-white/10 text-xs text-gray-400">
+          <strong class="text-white block mb-1">Company Legal Review Notice:</strong>
+          These terms are a working draft for RubyBug LLC to review with counsel before they are treated as final. They do not name a governing state, a court, a warranty, or a service-level commitment. Product features that are still being designed are described on the site and are not offered as live services by these terms.
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="reveal p-6 rounded-2xl bg-white/[0.02] border border-white/10">
+          <h3 class="text-xs uppercase tracking-widest text-white/50 font-mono mb-4">Table of Contents</h3>
+          <ol class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-gray-400">
+            <li><a href="#acceptance" class="hover:text-[#FF4500] transition-colors">1. Acceptance of terms</a></li>
+            <li><a href="#services" class="hover:text-[#FF4500] transition-colors">2. Description of services</a></li>
+            <li><a href="#eligibility" class="hover:text-[#FF4500] transition-colors">3. Eligibility</a></li>
+            <li><a href="#accounts" class="hover:text-[#FF4500] transition-colors">4. Account responsibilities</a></li>
+            <li><a href="#seller-authorization" class="hover:text-[#FF4500] transition-colors">5. Seller authorization</a></li>
+            <li><a href="#permitted" class="hover:text-[#FF4500] transition-colors">6. Permitted use</a></li>
+            <li><a href="#prohibited" class="hover:text-[#FF4500] transition-colors">7. Prohibited activities</a></li>
+            <li><a href="#third-parties" class="hover:text-[#FF4500] transition-colors">8. Third-party integrations</a></li>
+            <li><a href="#api" class="hover:text-[#FF4500] transition-colors">9. API availability</a></li>
+            <li><a href="#availability" class="hover:text-[#FF4500] transition-colors">10. Service availability</a></li>
+            <li><a href="#ip" class="hover:text-[#FF4500] transition-colors">11. Intellectual property</a></li>
+            <li><a href="#liability" class="hover:text-[#FF4500] transition-colors">12. Limitation of liability</a></li>
+            <li><a href="#suspension" class="hover:text-[#FF4500] transition-colors">13. Suspension and termination</a></li>
+            <li><a href="#changes" class="hover:text-[#FF4500] transition-colors">14. Changes to terms</a></li>
+            <li><a href="#contact" class="hover:text-[#FF4500] transition-colors">15. Contact information</a></li>
+          </ol>
+        </div>
+
+        <div id="acceptance" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">1. Acceptance of terms</h2>
+          <p>These terms apply to use of the public RubyBug Apps website operated by RubyBug LLC. By using the website, a visitor agrees to these terms. If a visitor does not agree, the visitor should not use the website. Product features that are still being designed are described on the site and are not offered as live services by these terms.</p>
+        </div>
+
+        <div id="services" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">2. Description of services</h2>
+          <p>RubyBug Apps is a software product being designed to help online merchants organize multiple authorized seller accounts and supported order information in one workspace. The website explains that product, the company, and how to make contact.</p>
+          <p>The website does not provide a login, a payment flow, or a live order connection. Illustrations are labeled as product concepts. Sample figures inside those illustrations are not customer results.</p>
+        </div>
+
+        <div id="eligibility" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">3. Eligibility</h2>
+          <p>The website is a public information site. It is written for businesses and merchants. Any future merchant account, if one is offered, will state its own eligibility rules at that time, including any platform rules that apply to a seller account.</p>
+        </div>
+
+        <div id="accounts" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">4. Account responsibilities</h2>
+          <p>This website does not issue RubyBug Apps accounts. If RubyBug LLC later offers a merchant account, the merchant will be responsible for the accuracy of information submitted, for keeping access to that account under the merchant’s control, and for activity taken with the merchant’s authorization.</p>
+        </div>
+
+        <div id="seller-authorization" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">5. Seller authorization</h2>
+          <p>A future connection to a seller account is designed to require the merchant’s authorization through the relevant platform. The merchant is responsible for reviewing the permissions requested and for connecting only accounts the merchant is allowed to connect. RubyBug Apps is not designed to accept a marketplace password in place of that authorization.</p>
+        </div>
+
+        <div id="permitted" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">6. Permitted use</h2>
+          <p>Visitors may use the website to learn about RubyBug Apps, to read the published policies, and to contact RubyBug LLC. Merchants may use future product features, when those features are actually offered, to organize seller accounts they are authorized to manage.</p>
+        </div>
+
+        <div id="prohibited" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">7. Prohibited activities</h2>
+          <p>Visitors may not:</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-400 pl-2">
+            <li>Use the website or a future product feature to access a seller account without authorization from the account holder and the relevant platform.</li>
+            <li>Interfere with the website, attempt to bypass an access control, or probe the site for a vulnerability except through a good-faith report to the contact email.</li>
+            <li>Misrepresent an affiliation with RubyBug LLC or present RubyBug Apps as an official product of a third-party platform.</li>
+            <li>Copy the site in a way that violates the intellectual-property section below, or use the site to send unlawful or deceptive messages.</li>
+          </ul>
+        </div>
+
+        <div id="third-parties" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">8. Third-party integrations</h2>
+          <p>RubyBug Apps is an independent software product. Third-party platforms are not parties to these terms. Their own terms, privacy policies, and seller rules apply to the merchant’s use of those platforms. A name of a platform, if one is published later, is a factual description of an integration and is not an endorsement or partnership.</p>
+          <p>RubyBug Apps is an independent software product. Third-party platform integrations are subject to applicable platform requirements, account eligibility, authorization, and API availability.</p>
+        </div>
+
+        <div id="api" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">9. API availability</h2>
+          <p>Any future integration can provide only the information that the platform API makes available under the permissions the merchant approved. A change, limit, or withdrawal of that API is outside RubyBug LLC’s control. The company may change or stop an integration if the platform’s requirements change or if the integration cannot be offered within those requirements.</p>
+        </div>
+
+        <div id="availability" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">10. Service availability</h2>
+          <p>The public website is provided as available. RubyBug LLC does not publish an uptime commitment on this page. Features described as in development may be delayed, changed, or not released.</p>
+        </div>
+
+        <div id="ip" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">11. Intellectual property</h2>
+          <p>The RubyBug Apps name, the text of this website, the layout, and the original illustrations are used by RubyBug LLC. Visitors may not copy the site for a competing product or remove proprietary notices. This page does not claim that a trademark registration has been issued.</p>
+          <p>Third-party names remain the property of their owners. They are used here, when used at all, for identification.</p>
+        </div>
+
+        <div id="liability" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">12. Limitation of liability</h2>
+          <p>The website is an informational description of a product that is still being designed. To the extent the law allows, RubyBug LLC is not liable for decisions a merchant makes based only on this website, for a third-party platform’s API, or for a feature that the site has identified as not yet available. This section does not set a dollar cap and does not name a state. Those provisions are unpublished until counsel approves them.</p>
+          <p>Nothing on this website is a warranty that a connection, a sync, or a particular operational result will be available.</p>
+        </div>
+
+        <div id="suspension" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">13. Suspension and termination</h2>
+          <p>There is no product account on this website to suspend. If a product account is offered later, RubyBug LLC may refuse, suspend, or end access that violates these terms, applicable law, or the rules of a platform the merchant connects. A visitor may stop using the website at any time.</p>
+        </div>
+
+        <div id="changes" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">14. Changes to terms</h2>
+          <p>RubyBug LLC may update these terms by posting a revised version on this page and changing the date at the top. Continued use of the website after the new date is posted applies to the revised terms. The site does not keep a user list from which to send a separate notice.</p>
+        </div>
+
+        <div id="contact" class="reveal space-y-4 pt-4 border-t border-white/5">
+          <h2 class="text-2xl font-serif text-white">15. Contact information</h2>
+          <div class="p-6 rounded-2xl bg-[#111] border border-white/10 space-y-2 font-mono text-xs">
+            <p><span class="text-white/50">Company:</span> RubyBug LLC</p>
+            <p><span class="text-white/50">Product:</span> RubyBug Apps</p>
+            <p><span class="text-white/50">Website:</span> <a href="https://rubybugllc.com" class="text-[#FF4500] hover:underline">https://rubybugllc.com</a></p>
+            <p><span class="text-white/50">Inquiries:</span> <a href="mailto:aissatalyah524@hotmail.com" class="text-[#FF4500] hover:underline">aissatalyah524@hotmail.com</a></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 border-t border-white/5 bg-[#050505] relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="mb-16 select-none pointer-events-none">
+          <h2 class="text-[12vw] leading-[0.8] tracking-tighter text-white/5 font-bold font-serif">
+            RUBYBUG.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-7 h-7 rounded-lg bg-[#FF4500] flex items-center justify-center text-white text-sm font-bold">R</span>
+              <span class="text-xl font-bold tracking-tighter font-serif text-white">RubyBug Apps</span>
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">
+              Centralized eCommerce management solutions designed to simplify multi-store operations.
+            </p>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-gray-400 font-mono">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+              <span>Systems: Operational</span>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">PRODUCT</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="features.html" class="hover:text-white transition-colors">Features</a></li>
+              <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="integrations.html" class="hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">COMPANY</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mailto:aissatalyah524@hotmail.com" class="hover:text-white transition-colors">aissatalyah524@hotmail.com</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">LEGAL</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="terms.html" class="text-white font-medium">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-mono">
+          <p>&copy; <span id="year">2026</span> RubyBug LLC. All rights reserved.</p>
+          <p>RubyBug Apps is an independent multi-store management platform.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.remove('py-8', 'bg-transparent');
+      } else {
+        nav.classList.remove('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.add('py-8', 'bg-transparent');
+      }
+    });
+
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobilePanel = document.getElementById('mobile-nav-panel');
+    if (mobileToggle && mobilePanel) {
+      mobileToggle.addEventListener('click', () => mobilePanel.classList.toggle('hidden'));
+    }
+
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>

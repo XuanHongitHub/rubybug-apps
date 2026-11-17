@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <title>A message prepared for the RubyBug LLC email address</title>
+  <rect width="640" height="420" rx="20" fill="#F7F5FF"/>
+  <rect x="78" y="58" width="484" height="304" rx="20" fill="#FFFFFF" stroke="#E9E8F0"/>
+  <rect x="106" y="86" width="44" height="44" rx="12" fill="#6D4AFF"/>
+  <path d="M118 108h20l-10 8-10-8Z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M118 108v12h20v-12" fill="none" stroke="#fff" stroke-width="1.8"/>
+  <text x="166" y="106" fill="#73758A" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13">To</text>
+  <text x="166" y="128" fill="#17172E" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="16" font-weight="700">RubyBug LLC</text>
+  <text x="106" y="176" fill="#73758A" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13">Subject</text>
+  <rect x="106" y="188" width="428" height="36" rx="10" fill="#F8F9FC" stroke="#E9E8F0"/>
+  <text x="122" y="212" fill="#202235" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="14">Question about RubyBug Apps</text>
+  <text x="106" y="256" fill="#73758A" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13">Message</text>
+  <rect x="106" y="268" width="428" height="58" rx="10" fill="#F8F9FC" stroke="#E9E8F0"/>
+  <text x="122" y="294" fill="#202235" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="14">Sent with your own email application.</text>
+  <text x="122" y="314" fill="#73758A" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12">This page does not store the form.</text>
+</svg>

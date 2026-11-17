@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Features | RubyBug Apps</title>
+  <meta name="description" content="Explore how RubyBug Apps is designed to organize multiple seller stores, centralize order flows, and connect accounts through merchant authorization.">
+  <link rel="canonical" href="https://rubybugllc.com/features.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RubyBug Apps">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Features | RubyBug Apps">
+  <meta property="og:description" content="Explore how RubyBug Apps is designed to organize multiple seller stores, centralize order flows, and connect accounts through merchant authorization.">
+  <meta property="og:url" content="https://rubybugllc.com/features.html">
+  <meta property="og:image" content="https://rubybugllc.com/assets/images/hero-dashboard.svg">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Tailwind CSS & Iconify -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Features",
+    "url": "https://rubybugllc.com/features.html",
+    "description": "See how RubyBug Apps is designed to organize multiple seller stores, centralize order information, and connect accounts through merchant authorization.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RubyBug Apps",
+      "url": "https://rubybugllc.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RubyBug LLC",
+      "url": "https://rubybugllc.com",
+      "email": "aissatalyah524@hotmail.com"
+    }
+  }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      background-image: url("assets/images/noise.svg");
+    }
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.25); }
+      50% { box-shadow: 0 0 0 6px rgba(255, 69, 0, 0.5); }
+    }
+    .pulse-dot {
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#FF4500] selection:text-white">
+  <div class="min-h-screen bg-[#050505]">
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-8">
+      <div class="container mx-auto px-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 text-2xl font-bold tracking-tighter font-serif text-white hover:opacity-90 transition-opacity">
+          <span class="w-8 h-8 rounded-lg bg-[#FF4500] flex items-center justify-center text-white text-base font-sans font-bold shadow-[0_0_20px_rgba(255,69,0,0.5)]">R</span>
+          <span>RubyBug.</span>
+        </a>
+        
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+          <a href="features.html" class="text-sm text-white font-medium" aria-current="page">Features</a>
+          <a href="how-it-works.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">How It Works</a>
+          <a href="integrations.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Integrations</a>
+          <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">About Us</a>
+          <a href="faq.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">FAQ</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium bg-white text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.15)]">
+            Contact Us
+          </a>
+          <button id="mobile-menu-toggle" type="button" class="lg:hidden w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10" aria-label="Toggle Navigation">
+            <iconify-icon icon="lucide:menu" class="text-xl"></iconify-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobile-nav-panel" class="hidden lg:hidden bg-[#0a0a0a]/95 border-b border-white/10 px-6 py-6 mt-4 backdrop-blur-xl">
+        <div class="flex flex-col space-y-4">
+          <a href="index.html" class="text-base text-gray-400 hover:text-white">Home</a>
+          <a href="features.html" class="text-base text-white font-medium">Features</a>
+          <a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a>
+          <a href="integrations.html" class="text-base text-gray-400 hover:text-white">Integrations</a>
+          <a href="about.html" class="text-base text-gray-400 hover:text-white">About Us</a>
+          <a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a>
+          <a href="contact.html" class="text-base text-[#FF4500] font-semibold">Contact Our Team &rarr;</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="relative pt-40 pb-20 overflow-hidden border-b border-white/5">
+      <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
+        <div class="reveal mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-xs uppercase tracking-widest text-white/90">
+          <span class="w-2 h-2 rounded-full bg-[#FF4500] pulse-dot"></span>
+          <span>Architectural Capabilities &bull; In Design Preview</span>
+        </div>
+        <h1 class="reveal text-5xl md:text-7xl font-medium tracking-tight mb-8 font-serif text-white">
+          Everything You Need for <br />
+          <span class="italic font-light text-[#FF4500]">Multi-Store Clarity.</span>
+        </h1>
+        <p class="reveal text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed" style="transition-delay: 150ms;">
+          Explore how RubyBug Apps is architected to eliminate multi-tab fragmentation, unify cross-channel order data, and keep daily eCommerce operations in complete harmony.
+        </p>
+
+        <!-- Product Status Notice -->
+        <div class="reveal mt-8 p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-400 max-w-2xl mx-auto leading-relaxed" style="transition-delay: 250ms;">
+          <strong class="text-white">Product status:</strong> The sections on this page describe capabilities being designed. None of them is offered as a live connection, live sync, or live order console on this website.
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Pillars Section -->
+    <section class="py-32 relative">
+      <div class="container mx-auto px-6 max-w-6xl space-y-32">
+
+        <!-- Pillar 01: Multi-Store Workspace -->
+        <article class="reveal grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" id="multi-store">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#FF4500] font-bold mb-4">
+              <span>01 &bull; Workspace</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
+              Multi-Store <br />Fleet Management
+            </h2>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6 font-light">
+              A merchant who sells through more than one account usually keeps a separate login, catalog context, and order list for each store. RubyBug Apps is designed to place those authorized accounts in one workspace so you can see which stores are connected without opening each seller environment in turn.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:alert-circle" class="text-[#FF4500]"></iconify-icon>
+                  The Merchant Challenge
+                </h3>
+                <p class="text-sm text-gray-400">The first hour of the day disappears into repeated logins across 5+ marketplace tabs. The work is not difficult, but it is duplicated for every store you run.</p>
+              </div>
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:check-circle" class="text-emerald-400"></iconify-icon>
+                  Operational Benefit
+                </h3>
+                <p class="text-sm text-gray-400">Connected accounts appear as a unified roster. Determine instantly which accounts are authorized and active before opening any order details.</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 italic">Limitation: A store appears only after that merchant authorizes that account. RubyBug Apps does not discover un-authorized stores.</p>
+          </div>
+          <div class="relative group">
+            <div class="absolute -inset-2 bg-gradient-to-r from-[#FF4500]/20 to-purple-600/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition duration-500"></div>
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl">
+              <img src="assets/images/stores-scene.jpg" alt="Connected store cards for three authorized seller accounts" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+        </article>
+
+        <!-- Pillar 02: Centralized Orders -->
+        <article class="reveal grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" id="orders">
+          <div class="lg:order-2">
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#FF4500] font-bold mb-4">
+              <span>02 &bull; Orders</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
+              Centralized <br />Order Management
+            </h2>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6 font-light">
+              Order detail that stays isolated inside each platform forces merchants to rebuild daily working lists by hand. The order view in RubyBug Apps is architected as one table: supported order records, the store each record belongs to, and a unified status you can scan in seconds.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:alert-circle" class="text-[#FF4500]"></iconify-icon>
+                  The Merchant Challenge
+                </h3>
+                <p class="text-sm text-gray-400">“What still needs attention today?” has no single answer when each store keeps its own siloed queue.</p>
+              </div>
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:check-circle" class="text-emerald-400"></iconify-icon>
+                  Operational Benefit
+                </h3>
+                <p class="text-sm text-gray-400">Review one consolidated pipeline instead of piecing together spreadsheets. The store name stays attached so an order is never detached from its source.</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 italic">Limitation: Displays only fields provided by authorized integrations. RubyBug Apps does not replace marketplace fulfillment tools.</p>
+          </div>
+          <div class="lg:order-1 relative group">
+            <div class="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-[#FF4500]/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition duration-500"></div>
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl">
+              <img src="assets/images/orders-scene.jpg" alt="Centralized order table showing order, store, and status columns" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+        </article>
+
+        <!-- Pillar 03: Data Synchronization -->
+        <article class="reveal grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" id="synchronization">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#FF4500] font-bold mb-4">
+              <span>03 &bull; Data Movement</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
+              Order Data <br />Synchronization
+            </h2>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6 font-light">
+              Copying order numbers, statuses, and tracking codes from one window to another is prone to expensive human error. Synchronization is the automated alternative: after authorization, supported order data streams through official platform APIs into your unified workspace.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:alert-circle" class="text-[#FF4500]"></iconify-icon>
+                  The Merchant Challenge
+                </h3>
+                <p class="text-sm text-gray-400">Manual copy-pasting creates duplicate records that drift out of sync as soon as a customer changes an address or cancels an item.</p>
+              </div>
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:check-circle" class="text-emerald-400"></iconify-icon>
+                  Operational Benefit
+                </h3>
+                <p class="text-sm text-gray-400">The workspace receives authoritative updates automatically, eliminating retyping and status drift.</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 italic">Limitation: Synchronization reflects only data permitted by the platform API. Live sync is currently in development.</p>
+          </div>
+          <div class="relative group">
+            <div class="absolute -inset-2 bg-gradient-to-r from-[#FF4500]/20 to-pink-600/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition duration-500"></div>
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl">
+              <img src="assets/images/sync-scene.jpg" alt="Order information moving from an authorized API into one RubyBug Apps workspace" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+        </article>
+
+        <!-- Pillar 04: Authorized Connections -->
+        <article class="reveal grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" id="authorization">
+          <div class="lg:order-2">
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#FF4500] font-bold mb-4">
+              <span>04 &bull; Permission &amp; Security</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
+              Authorized <br />Account Connections
+            </h2>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6 font-light">
+              Sharing a store password with a tool is an unacceptable security vulnerability. RubyBug Apps is architected strictly around official OAuth 2.0 authorization: the merchant approves requested scopes directly on the marketplace portal and can revoke access anytime.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:alert-circle" class="text-[#FF4500]"></iconify-icon>
+                  The Merchant Challenge
+                </h3>
+                <p class="text-sm text-gray-400">Sellers need to connect channels without handing over master credentials or granting unreviewed account privileges.</p>
+              </div>
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:check-circle" class="text-emerald-400"></iconify-icon>
+                  Operational Benefit
+                </h3>
+                <p class="text-sm text-gray-400">Zero password storage. You maintain 100% control over granted permissions, with tokens isolated per tenant.</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 italic">Limitation: Connection flows are offered only where official platform APIs and partner approvals are active.</p>
+          </div>
+          <div class="lg:order-1 relative group">
+            <div class="absolute -inset-2 bg-gradient-to-r from-emerald-600/20 to-[#FF4500]/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition duration-500"></div>
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl">
+              <img src="assets/images/auth-scene.jpg" alt="Authorization step where merchant reviews permissions" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+        </article>
+
+        <!-- Pillar 05: Operational Visibility -->
+        <article class="reveal grid grid-cols-1 lg:grid-cols-2 gap-16 items-center" id="visibility">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#FF4500] font-bold mb-4">
+              <span>05 &bull; Operational Summary</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
+              Centralized <br />Operational Visibility
+            </h2>
+            <p class="text-gray-300 text-lg leading-relaxed mb-6 font-light">
+              Checking stores separately never provides a coherent picture of total business velocity. The overview provides a high-level operational pulse: active connections, orders currently in view, and urgent alerts requiring your team's immediate touch.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:alert-circle" class="text-[#FF4500]"></iconify-icon>
+                  The Merchant Challenge
+                </h3>
+                <p class="text-sm text-gray-400">Without a shared summary, staff must cycle through every store dashboard before identifying which orders are late.</p>
+              </div>
+              <div class="p-4 rounded-xl bg-[#111] border border-white/10">
+                <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-1 flex items-center gap-2">
+                  <iconify-icon icon="lucide:check-circle" class="text-emerald-400"></iconify-icon>
+                  Operational Benefit
+                </h3>
+                <p class="text-sm text-gray-400">Your workday starts from a single screen that points directly to orders needing fulfillment, saving hours every week.</p>
+              </div>
+            </div>
+            <p class="text-xs text-gray-500 italic">Limitation: Numbers reflect data ingested through APIs; they are not marketplace sales analytics.</p>
+          </div>
+          <div class="relative group">
+            <div class="absolute -inset-2 bg-gradient-to-r from-blue-600/20 to-[#FF4500]/20 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition duration-500"></div>
+            <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl">
+              <img src="assets/images/hero-scene.jpg" alt="A laptop showing illustrative operations screen" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Final CTA Band -->
+    <section class="py-32 border-t border-white/5 bg-gradient-to-b from-[#050505] to-[#0d0d0d] relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+        <div class="reveal">
+          <h2 class="text-5xl md:text-7xl font-serif text-white mb-8">
+            Experience unified <br />
+            <span class="italic font-light text-[#FF4500]">multi-store operations.</span>
+          </h2>
+          <p class="text-lg md:text-xl text-gray-400 max-w-xl mx-auto mb-12 font-light leading-relaxed">
+            Discover a calmer, more organized approach to multi-channel commerce with RubyBug Apps.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <a href="contact.html" class="px-8 py-4 rounded-full bg-white text-black font-medium text-sm uppercase tracking-widest hover:bg-gray-100 hover:scale-105 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+              Contact RubyBug Team
+            </a>
+            <a href="how-it-works.html" class="px-8 py-4 rounded-full border border-white/20 bg-white/5 text-white font-medium text-sm uppercase tracking-widest hover:bg-white/10 hover:border-white/40 transition-all">
+              See How It Works
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 border-t border-white/5 bg-[#050505] relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="mb-16 select-none pointer-events-none">
+          <h2 class="text-[12vw] leading-[0.8] tracking-tighter text-white/5 font-bold font-serif">
+            RUBYBUG.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-7 h-7 rounded-lg bg-[#FF4500] flex items-center justify-center text-white text-sm font-bold">R</span>
+              <span class="text-xl font-bold tracking-tighter font-serif text-white">RubyBug Apps</span>
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">
+              Centralized eCommerce management solutions designed to simplify multi-store operations.
+            </p>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-gray-400 font-mono">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+              <span>Systems: Operational</span>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">PRODUCT</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="features.html" class="text-white font-medium">Features</a></li>
+              <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="integrations.html" class="hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">COMPANY</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mailto:aissatalyah524@hotmail.com" class="hover:text-white transition-colors">aissatalyah524@hotmail.com</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">LEGAL</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-mono">
+          <p>&copy; <span id="year">2026</span> RubyBug LLC. All rights reserved.</p>
+          <p>RubyBug Apps is an independent multi-store management platform.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.remove('py-8', 'bg-transparent');
+      } else {
+        nav.classList.remove('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.add('py-8', 'bg-transparent');
+      }
+    });
+
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobilePanel = document.getElementById('mobile-nav-panel');
+    if (mobileToggle && mobilePanel) {
+      mobileToggle.addEventListener('click', () => mobilePanel.classList.toggle('hidden'));
+    }
+
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>

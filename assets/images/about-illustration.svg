@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420">
+  <title>Separate store routines gathered into one workspace</title>
+  <rect width="640" height="420" rx="20" fill="#F7F5FF"/>
+  <rect x="40" y="70" width="140" height="88" rx="14" fill="#FFFFFF" stroke="#E9E8F0"/>
+  <text x="58" y="108" fill="#17172E" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="15" font-weight="700">Stores</text>
+  <text x="58" y="132" fill="#73758A" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13">Several accounts</text>
+  <rect x="40" y="174" width="140" height="88" rx="14" fill="#FFFFFF" stroke="#E9E8F0"/>
+  <text x="58" y="212" fill="#17172E" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="15" font-weight="700">Orders</text>
+  <text x="58" y="236" fill="#73758A" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13">Scattered records</text>
+  <rect x="40" y="278" width="140" height="72" rx="14" fill="#FFFFFF" stroke="#E9E8F0"/>
+  <text x="58" y="320" fill="#17172E" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="15" font-weight="700">Daily work</text>
+  <path d="M190 114h70" stroke="#6D4AFF" stroke-width="2"/>
+  <path d="M190 218h70" stroke="#6D4AFF" stroke-width="2"/>
+  <path d="M190 314h70" stroke="#6D4AFF" stroke-width="2"/>
+  <path d="M260 114v200" stroke="#6D4AFF" stroke-width="2"/>
+  <path d="M260 210h48" stroke="#6D4AFF" stroke-width="2"/>
+  <path d="M300 204l10 6-10 6" fill="none" stroke="#6D4AFF" stroke-width="2"/>
+  <rect x="318" y="78" width="282" height="264" rx="18" fill="#FFFFFF" stroke="#E9E8F0"/>
+  <rect x="338" y="98" width="28" height="28" rx="8" fill="#6D4AFF"/>
+  <text x="376" y="118" fill="#17172E" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="16" font-weight="700">RubyBug Apps</text>
+  <text x="338" y="160" fill="#73758A" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13">Designed workspace</text>
+  <rect x="338" y="180" width="242" height="36" rx="10" fill="#F8F9FC" stroke="#E9E8F0"/>
+  <text x="354" y="203" fill="#202235" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13">Store list</text>
+  <rect x="338" y="226" width="242" height="36" rx="10" fill="#F8F9FC" stroke="#E9E8F0"/>
+  <text x="354" y="249" fill="#202235" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13">Order list</text>
+  <rect x="338" y="272" width="242" height="36" rx="10" fill="#EEE9FF"/>
+  <text x="354" y="295" fill="#5133CC" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13" font-weight="700">One review point</text>
+</svg>

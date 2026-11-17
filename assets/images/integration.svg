@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640">
+  <title>Merchant authorization before a seller account is connected</title>
+  <defs>
+    <linearGradient id="ibg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f9fc"/>
+      <stop offset="1" stop-color="#ece9ff"/>
+    </linearGradient>
+    <filter id="ish" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0a2540" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <rect width="960" height="640" rx="24" fill="url(#ibg)"/>
+  <g filter="url(#ish)">
+    <rect x="180" y="48" width="600" height="544" rx="20" fill="#fff"/>
+    <text x="216" y="104" fill="#635bff" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="600">Authorization · in design</text>
+    <text x="216" y="152" fill="#0a2540" font-family="Segoe UI, Inter, sans-serif" font-size="28" font-weight="400">Review permissions</text>
+    <text x="216" y="188" fill="#425466" font-family="Segoe UI, Inter, sans-serif" font-size="16">The merchant approves what RubyBug Apps may read.</text>
+    <rect x="216" y="224" width="528" height="72" rx="12" fill="#f6f9fc"/>
+    <circle cx="252" cy="260" r="8" fill="#15be53"/>
+    <text x="276" y="256" fill="#0a2540" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="600">Read supported order fields</text>
+    <text x="276" y="278" fill="#425466" font-family="Segoe UI, Inter, sans-serif" font-size="13">Only if the platform API provides them</text>
+    <rect x="216" y="312" width="528" height="72" rx="12" fill="#f6f9fc"/>
+    <circle cx="252" cy="348" r="8" fill="#15be53"/>
+    <text x="276" y="344" fill="#0a2540" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="600">Identify the connected store</text>
+    <text x="276" y="366" fill="#425466" font-family="Segoe UI, Inter, sans-serif" font-size="13">So each record stays with its account</text>
+    <rect x="216" y="400" width="528" height="72" rx="12" fill="#fff" stroke="#e6ebf1"/>
+    <circle cx="252" cy="436" r="8" fill="#e6ebf1" stroke="#8898a9"/>
+    <text x="276" y="432" fill="#0a2540" font-family="Segoe UI, Inter, sans-serif" font-size="16" font-weight="600">No password stored in RubyBug</text>
+    <text x="276" y="454" fill="#425466" font-family="Segoe UI, Inter, sans-serif" font-size="13">Access follows the platform’s own flow</text>
+    <rect x="216" y="504" width="160" height="40" rx="6" fill="#635bff"/>
+    <text x="248" y="530" fill="#fff" font-family="Segoe UI, Inter, sans-serif" font-size="14" font-weight="600">Approve</text>
+    <rect x="392" y="504" width="140" height="40" rx="6" fill="#fff" stroke="#e6ebf1"/>
+    <text x="430" y="530" fill="#0a2540" font-family="Segoe UI, Inter, sans-serif" font-size="14">Decline</text>
+  </g>
+</svg>

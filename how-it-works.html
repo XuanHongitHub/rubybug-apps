@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works | RubyBug Apps</title>
+  <meta name="description" content="Follow the intended RubyBug Apps workflow, from seller authorization to a centralized workspace for multi-store operations.">
+  <link rel="canonical" href="https://rubybugllc.com/how-it-works.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RubyBug Apps">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="How It Works | RubyBug Apps">
+  <meta property="og:description" content="Follow the intended RubyBug Apps workflow, from seller authorization to a centralized workspace for multi-store operations.">
+  <meta property="og:url" content="https://rubybugllc.com/how-it-works.html">
+  <meta property="og:image" content="https://rubybugllc.com/assets/images/synchronization.svg">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Tailwind CSS & Iconify -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "How It Works",
+    "url": "https://rubybugllc.com/how-it-works.html",
+    "description": "Follow the intended RubyBug Apps workflow, from seller authorization to a centralized workspace for multi-store operations.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RubyBug Apps",
+      "url": "https://rubybugllc.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RubyBug LLC",
+      "url": "https://rubybugllc.com",
+      "email": "aissatalyah524@hotmail.com"
+    }
+  }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      background-image: url("assets/images/noise.svg");
+    }
+    @keyframes pulseDot {
+      0%, 100% { box-shadow: 0 0 0 2px rgba(255, 69, 0, 0.25); }
+      50% { box-shadow: 0 0 0 6px rgba(255, 69, 0, 0.5); }
+    }
+    .pulse-dot {
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#FF4500] selection:text-white">
+  <div class="min-h-screen bg-[#050505]">
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-8">
+      <div class="container mx-auto px-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 text-2xl font-bold tracking-tighter font-serif text-white hover:opacity-90 transition-opacity">
+          <span class="w-8 h-8 rounded-lg bg-[#FF4500] flex items-center justify-center text-white text-base font-sans font-bold shadow-[0_0_20px_rgba(255,69,0,0.5)]">R</span>
+          <span>RubyBug.</span>
+        </a>
+        
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+          <a href="features.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Features</a>
+          <a href="how-it-works.html" class="text-sm text-white font-medium" aria-current="page">How It Works</a>
+          <a href="integrations.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Integrations</a>
+          <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">About Us</a>
+          <a href="faq.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">FAQ</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium bg-white text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.15)]">
+            Contact Us
+          </a>
+          <button id="mobile-menu-toggle" type="button" class="lg:hidden w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10" aria-label="Toggle Navigation">
+            <iconify-icon icon="lucide:menu" class="text-xl"></iconify-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobile-nav-panel" class="hidden lg:hidden bg-[#0a0a0a]/95 border-b border-white/10 px-6 py-6 mt-4 backdrop-blur-xl">
+        <div class="flex flex-col space-y-4">
+          <a href="index.html" class="text-base text-gray-400 hover:text-white">Home</a>
+          <a href="features.html" class="text-base text-gray-400 hover:text-white">Features</a>
+          <a href="how-it-works.html" class="text-base text-white font-medium">How It Works</a>
+          <a href="integrations.html" class="text-base text-gray-400 hover:text-white">Integrations</a>
+          <a href="about.html" class="text-base text-gray-400 hover:text-white">About Us</a>
+          <a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a>
+          <a href="contact.html" class="text-base text-[#FF4500] font-semibold">Contact Our Team &rarr;</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="relative pt-40 pb-20 overflow-hidden border-b border-white/5">
+      <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
+        <div class="reveal mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-xs uppercase tracking-widest text-white/90">
+          <span class="w-2 h-2 rounded-full bg-[#FF4500] pulse-dot"></span>
+          <span>Integration Workflow &bull; Five-Stage Architecture</span>
+        </div>
+        <h1 class="reveal text-5xl md:text-7xl font-medium tracking-tight mb-8 font-serif text-white">
+          How RubyBug Apps <br />
+          <span class="italic font-light text-[#FF4500]">Operates.</span>
+        </h1>
+        <p class="reveal text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed" style="transition-delay: 150ms;">
+          A permissioned, secure path from multiple seller accounts to one centralized workspace. The merchant initiates, approves requested scopes, and reviews synchronized data.
+        </p>
+
+        <div class="reveal mt-8 p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-gray-400 max-w-2xl mx-auto leading-relaxed" style="transition-delay: 250ms;">
+          <strong class="text-white">In development:</strong> Authorization and synchronization are described here as the intended architecture. They have not been presented as live, tested services on this website.
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Band Showcase -->
+    <section class="py-20 relative">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="reveal relative rounded-3xl overflow-hidden border border-white/10 bg-[#111] shadow-2xl group">
+          <img src="assets/images/workflow-scene.jpg" alt="Five blocks in a row representing the intended workflow" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+          <div class="absolute bottom-4 left-6 text-xs text-gray-400 font-mono">Illustrative sequence &bull; Not a live connection</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Five Detailed Stages Section -->
+    <section class="py-24 border-t border-white/5 relative">
+      <div class="container mx-auto px-6 max-w-4xl space-y-16">
+        <div class="text-center reveal mb-16">
+          <p class="text-xs uppercase tracking-[0.25em] text-[#FF4500] font-semibold mb-4">Step-by-Step Sequence</p>
+          <h2 class="text-4xl md:text-5xl font-serif text-white">The Operating Sequence</h2>
+        </div>
+
+        <!-- Stage 1 -->
+        <article class="reveal p-8 md:p-10 rounded-2xl bg-[#0f0f0f] border border-white/10 hover:border-[#FF4500]/40 transition-all duration-300 relative group" id="step-connection">
+          <div class="flex items-center justify-between mb-6">
+            <span class="px-3 py-1 rounded-full bg-[#FF4500]/10 border border-[#FF4500]/30 text-xs font-mono font-bold text-[#FF4500]">STAGE 01</span>
+            <span class="text-xs font-mono text-gray-500 uppercase">In Development</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-serif text-white mb-4">Account Connection</h3>
+          <p class="text-gray-300 leading-relaxed font-light text-base">
+            The merchant initiates the account connection process for a supported seller account. The workspace treats each account as an isolated, distinct entity—so connecting a second or third store is an explicit merchant choice rather than an automatic unvetted import.
+          </p>
+        </article>
+
+        <!-- Stage 2 -->
+        <article class="reveal p-8 md:p-10 rounded-2xl bg-[#0f0f0f] border border-white/10 hover:border-[#FF4500]/40 transition-all duration-300 relative group" style="transition-delay: 100ms;" id="step-authorization">
+          <div class="flex items-center justify-between mb-6">
+            <span class="px-3 py-1 rounded-full bg-[#FF4500]/10 border border-[#FF4500]/30 text-xs font-mono font-bold text-[#FF4500]">STAGE 02</span>
+            <span class="text-xs font-mono text-gray-500 uppercase">In Development</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-serif text-white mb-4">Merchant Authorization</h3>
+          <p class="text-gray-300 leading-relaxed font-light text-base">
+            The merchant reviews and approves the requested permissions on the platform’s official authorization screen. Sellers hold complete authority: if you decline or later revoke access within your seller portal, RubyBug Apps ceases reading that store's data immediately.
+          </p>
+        </article>
+
+        <!-- Stage 3 -->
+        <article class="reveal p-8 md:p-10 rounded-2xl bg-[#0f0f0f] border border-white/10 hover:border-[#FF4500]/40 transition-all duration-300 relative group" style="transition-delay: 200ms;" id="step-integration">
+          <div class="flex items-center justify-between mb-6">
+            <span class="px-3 py-1 rounded-full bg-[#FF4500]/10 border border-[#FF4500]/30 text-xs font-mono font-bold text-[#FF4500]">STAGE 03</span>
+            <span class="text-xs font-mono text-gray-500 uppercase">In Development</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-serif text-white mb-4">Data Integration &amp; Ingestion</h3>
+          <p class="text-gray-300 leading-relaxed font-light text-base">
+            Supported store information is retrieved through official API integrations (Shopify Partner API, Amazon SP-API, TikTok Shop Seller API). Data access is strictly bounded by approved scopes—data that an API does not expose will never be guessed or fabricated.
+          </p>
+        </article>
+
+        <!-- Stage 4 -->
+        <article class="reveal p-8 md:p-10 rounded-2xl bg-[#0f0f0f] border border-white/10 hover:border-[#FF4500]/40 transition-all duration-300 relative group" style="transition-delay: 300ms;" id="step-management">
+          <div class="flex items-center justify-between mb-6">
+            <span class="px-3 py-1 rounded-full bg-[#FF4500]/10 border border-[#FF4500]/30 text-xs font-mono font-bold text-[#FF4500]">STAGE 04</span>
+            <span class="text-xs font-mono text-gray-500 uppercase">In Development</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-serif text-white mb-4">Centralized Fleet Management</h3>
+          <p class="text-gray-300 leading-relaxed font-light text-base">
+            Ingested records are normalized and mapped into the RubyBug Apps command center. Every order row is immutably tagged to its originating seller store, and the account status roster confirms which channels have healthy, active synchronization tokens.
+          </p>
+        </article>
+
+        <!-- Stage 5 -->
+        <article class="reveal p-8 md:p-10 rounded-2xl bg-[#0f0f0f] border border-white/10 hover:border-[#FF4500]/40 transition-all duration-300 relative group" style="transition-delay: 400ms;" id="step-operations">
+          <div class="flex items-center justify-between mb-6">
+            <span class="px-3 py-1 rounded-full bg-[#FF4500]/10 border border-[#FF4500]/30 text-xs font-mono font-bold text-[#FF4500]">STAGE 05</span>
+            <span class="text-xs font-mono text-gray-500 uppercase">In Development</span>
+          </div>
+          <h3 class="text-2xl md:text-3xl font-serif text-white mb-4">Daily Fulfillment &amp; Operations</h3>
+          <p class="text-gray-300 leading-relaxed font-light text-base">
+            Merchants conduct their daily morning checks and fulfillment reviews from that single unified view. The practical outcome is a significantly shortened path through daily operations: know which accounts need attention and which orders are pending dispatch without tab-hopping.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Strict Conditions Section -->
+    <section class="py-32 border-t border-white/5 bg-[#0a0a0a] relative">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="text-center reveal mb-20">
+          <p class="text-xs uppercase tracking-[0.25em] text-[#FF4500] font-semibold mb-4">Governing Principles</p>
+          <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Conditions That Apply to Every Step</h2>
+          <p class="text-gray-400 text-lg font-light max-w-xl mx-auto">Integration availability depends on platform approval and merchant authorization.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="reveal p-8 rounded-2xl bg-[#111] border border-white/10 hover:border-white/30 transition-all">
+            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] text-xl mb-6">
+              <iconify-icon icon="lucide:user-check"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-white mb-3">Merchant Control</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              The merchant alone decides whether an account is linked, which scopes to approve, and when to revoke granted access.
+            </p>
+          </div>
+
+          <div class="reveal p-8 rounded-2xl bg-[#111] border border-white/10 hover:border-white/30 transition-all" style="transition-delay: 100ms;">
+            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] text-xl mb-6">
+              <iconify-icon icon="lucide:shield-check"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-white mb-3">Approved Permissions Only</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              The platform is designed to query only the data points authorized by the seller. No unvetted background scraping occurs.
+            </p>
+          </div>
+
+          <div class="reveal p-8 rounded-2xl bg-[#111] border border-white/10 hover:border-white/30 transition-all" style="transition-delay: 200ms;">
+            <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[#FF4500] text-xl mb-6">
+              <iconify-icon icon="lucide:database"></iconify-icon>
+            </div>
+            <h3 class="text-xl font-serif text-white mb-3">Platform API Boundaries</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">
+              What can be synchronized is bounded by the official marketplace API capabilities and rate limits implemented for that integration.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center mt-16">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <a href="integrations.html" class="px-8 py-3.5 rounded-full bg-white text-black font-medium text-sm uppercase tracking-widest hover:bg-gray-100 transition-all">
+              Review Integration Terms
+            </a>
+            <a href="faq.html" class="px-8 py-3.5 rounded-full border border-white/20 bg-white/5 text-white font-medium text-sm uppercase tracking-widest hover:bg-white/10 transition-all">
+              Read Technical FAQ
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 border-t border-white/5 bg-[#050505] relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="mb-16 select-none pointer-events-none">
+          <h2 class="text-[12vw] leading-[0.8] tracking-tighter text-white/5 font-bold font-serif">
+            RUBYBUG.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-3 mb-6">
+              <span class="w-7 h-7 rounded-lg bg-[#FF4500] flex items-center justify-center text-white text-sm font-bold">R</span>
+              <span class="text-xl font-bold tracking-tighter font-serif text-white">RubyBug Apps</span>
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">
+              Centralized eCommerce management solutions designed to simplify multi-store operations.
+            </p>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-gray-400 font-mono">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+              <span>Systems: Operational</span>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">PRODUCT</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="features.html" class="hover:text-white transition-colors">Features</a></li>
+              <li><a href="how-it-works.html" class="text-white font-medium">How It Works</a></li>
+              <li><a href="integrations.html" class="hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">COMPANY</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mailto:aissatalyah524@hotmail.com" class="hover:text-white transition-colors">aissatalyah524@hotmail.com</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">LEGAL</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-mono">
+          <p>&copy; <span id="year">2026</span> RubyBug LLC. All rights reserved.</p>
+          <p>RubyBug Apps is an independent multi-store management platform.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.remove('py-8', 'bg-transparent');
+      } else {
+        nav.classList.remove('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.add('py-8', 'bg-transparent');
+      }
+    });
+
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobilePanel = document.getElementById('mobile-nav-panel');
+    if (mobileToggle && mobilePanel) {
+      mobileToggle.addEventListener('click', () => mobilePanel.classList.toggle('hidden'));
+    }
+
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>
