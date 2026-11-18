@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Incident Reporting | RubyBug Apps</title>
+  <meta name="description" content="Dedicated channel to report security incidents, vulnerabilities, or privacy breaches to RubyBug LLC. 72-hour breach notification SLA.">
+  <link rel="canonical" href="https://rubybugllc.com/security-report.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RubyBug Apps">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Security Incident Reporting | RubyBug Apps">
+  <meta property="og:description" content="Dedicated channel to report security incidents, vulnerabilities, or privacy breaches to RubyBug LLC. 72-hour breach notification SLA.">
+  <meta property="og:url" content="https://rubybugllc.com/security-report.html">
+  <meta property="og:image" content="https://rubybugllc.com/assets/images/logo.svg">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Tailwind CSS & Iconify -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      background-image: url("assets/images/noise.svg");
+    }
+  </style>
+</head>
+<body class="selection:bg-[#FF4500] selection:text-white">
+  <div class="min-h-screen bg-[#050505]">
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-8">
+      <div class="container mx-auto px-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity">
+          <img src="assets/images/logo.svg" alt="RubyBug Apps" class="h-9 w-auto">
+        </a>
+        
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+          <a href="features.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Features</a>
+          <a href="how-it-works.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">How It Works</a>
+          <a href="integrations.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Integrations</a>
+          <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">About Us</a>
+          <a href="faq.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">FAQ</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium bg-white text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.15)]">
+            Contact Us
+          </a>
+          <button id="mobile-menu-toggle" type="button" class="lg:hidden w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10" aria-label="Toggle Navigation">
+            <iconify-icon icon="lucide:menu" class="text-xl"></iconify-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobile-nav-panel" class="hidden lg:hidden bg-[#0a0a0a]/95 border-b border-white/10 px-6 py-6 mt-4 backdrop-blur-xl">
+        <div class="flex flex-col space-y-4">
+          <a href="index.html" class="text-base text-gray-400 hover:text-white">Home</a>
+          <a href="features.html" class="text-base text-gray-400 hover:text-white">Features</a>
+          <a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a>
+          <a href="integrations.html" class="text-base text-gray-400 hover:text-white">Integrations</a>
+          <a href="about.html" class="text-base text-gray-400 hover:text-white">About Us</a>
+          <a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a>
+          <a href="contact.html" class="text-base text-[#FF4500] font-semibold">Contact Our Team &rarr;</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="relative pt-40 pb-20 overflow-hidden border-b border-white/5">
+      <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
+        <div class="reveal mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-xs uppercase tracking-widest text-white/90">
+          <span>Security Governance &bull; Responsible Disclosure</span>
+        </div>
+        <h1 class="reveal text-5xl md:text-7xl font-medium tracking-tight mb-8 font-serif text-white">
+          Incident Reporting. <br />
+          <span class="italic font-light text-[#FF4500]">Security & Vulnerability Intake.</span>
+        </h1>
+        <p class="reveal text-sm text-gray-400 max-w-xl mx-auto font-mono" style="transition-delay: 150ms;">
+          Direct communication channel for security researchers, partners, and merchants
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-24 relative">
+      <div class="container mx-auto px-6 max-w-5xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+          <!-- Left Column: Incident Policies & SLAs -->
+          <div class="reveal space-y-8">
+            <div class="p-8 rounded-3xl bg-[#111] border border-white/10 space-y-4">
+              <div class="flex items-center gap-3 text-[#FF4500]">
+                <iconify-icon icon="lucide:alert-triangle" class="text-2xl"></iconify-icon>
+                <h3 class="text-base font-semibold text-white uppercase tracking-wider font-mono">Incident Response SLA</h3>
+              </div>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                RubyBug LLC treats platform stability, data confidentiality, and API integrity with top priority. We operate an active security response protocol to triage, remediate, and report incidents rapidly.
+              </p>
+              <div class="space-y-3 pt-4 border-t border-white/5 text-xs font-mono">
+                <div class="flex justify-between">
+                  <span class="text-gray-500">Initial Acknowledgment:</span>
+                  <span class="text-emerald-400">Within 24 Hours</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-500">Breach Notification SLA:</span>
+                  <span class="text-white">Within 72 Hours</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-500">Status Updates:</span>
+                  <span class="text-white">Every 48h until resolved</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <h2 class="text-2xl font-serif text-white">Responsible Disclosure Policy</h2>
+              <p class="text-xs text-gray-400 leading-relaxed">
+                If you believe you have discovered a potential security vulnerability in RubyBug Apps, our API endpoints, or our public infrastructure, we encourage you to notify us promptly.
+              </p>
+              <ul class="list-disc list-inside space-y-2 text-xs text-gray-400 pl-2">
+                <li>Provide full details and steps to reproduce (proof of concept).</li>
+                <li>Do not exploit the vulnerability to view, alter, or destroy data belonging to other merchants.</li>
+                <li>Give RubyBug LLC reasonable time to remediate before public disclosure.</li>
+              </ul>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-[#0a0a0a] border border-white/10 space-y-2 font-mono text-xs">
+              <span class="text-[#FF4500] font-bold block mb-1">Direct Security Contact</span>
+              <p><span class="text-white/50">Inbox:</span> <a href="mailto:aissatalyah524@hotmail.com" class="text-white hover:underline">aissatalyah524@hotmail.com</a></p>
+              <p><span class="text-white/50">Subject:</span> [SECURITY INCIDENT] - [Brief Summary]</p>
+              <p><span class="text-white/50">Entity:</span> RubyBug LLC</p>
+              <p><span class="text-white/50">Address:</span> 1001 S MAIN ST, STE 600, KALISPELL, MT 59901-1498</p>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Report Form -->
+          <div class="reveal p-8 md:p-10 rounded-3xl bg-[#111] border border-white/10 shadow-2xl" style="transition-delay: 150ms;">
+            <div class="mb-6">
+              <span class="text-xs font-mono uppercase tracking-widest text-[#FF4500] font-bold block mb-1">Submit Report</span>
+              <h3 class="text-2xl font-serif text-white">Incident Intake Form</h3>
+              <p class="text-xs text-gray-400 mt-1">
+                Submitting opens your native mail client with prefilled diagnostic parameters directed to our security engineering team.
+              </p>
+            </div>
+
+            <form id="incident-form" class="space-y-4" novalidate>
+              <div>
+                <label for="reporter-name" class="block text-xs font-mono uppercase text-gray-400 mb-2">Reporter Name / Security Handle *</label>
+                <input type="text" id="reporter-name" required placeholder="Alex Miller (or Security Team)" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#FF4500] transition-colors">
+              </div>
+
+              <div>
+                <label for="reporter-email" class="block text-xs font-mono uppercase text-gray-400 mb-2">Your Contact Email *</label>
+                <input type="email" id="reporter-email" required placeholder="alex@security-audit.com" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#FF4500] transition-colors">
+              </div>
+
+              <div>
+                <label for="severity" class="block text-xs font-mono uppercase text-gray-400 mb-2">Estimated Severity Level *</label>
+                <select id="severity" class="w-full px-4 py-3 rounded-xl bg-[#0f0f0f] border border-white/10 text-white text-sm focus:outline-none focus:border-[#FF4500] transition-colors">
+                  <option value="Critical">Critical &mdash; Active breach / Remote code execution / Unauthorized data exposure</option>
+                  <option value="High">High &mdash; Authentication bypass / Token leak / Privilege escalation</option>
+                  <option value="Medium" selected>Medium &mdash; Insecure API implementation / Logic vulnerability</option>
+                  <option value="Low">Low &mdash; Informational / Best practice recommendation</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="affected-system" class="block text-xs font-mono uppercase text-gray-400 mb-2">Affected URL or Component *</label>
+                <input type="text" id="affected-system" required placeholder="e.g. https://rubybugllc.com/auth/callback" class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#FF4500] transition-colors">
+              </div>
+
+              <div>
+                <label for="description" class="block text-xs font-mono uppercase text-gray-400 mb-2">Vulnerability Description & Steps to Reproduce *</label>
+                <textarea id="description" rows="5" required placeholder="Describe the vulnerability, headers, payloads, and reproduction steps clearly..." class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#FF4500] transition-colors"></textarea>
+              </div>
+
+              <div id="incident-msg" class="text-xs hidden p-3 rounded-xl"></div>
+
+              <button type="submit" class="w-full py-4 rounded-full bg-[#FF4500] text-white font-medium text-sm uppercase tracking-widest hover:scale-[1.02] transition-all shadow-[0_0_25px_rgba(255,69,0,0.4)]">
+                Dispatch Incident Report &rarr;
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 border-t border-white/5 bg-[#050505] relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="mb-16 select-none pointer-events-none">
+          <h2 class="text-[12vw] leading-[0.8] tracking-tighter text-white/5 font-bold font-serif">
+            RUBYBUG
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div class="md:col-span-1">
+            <div class="mb-6">
+              <img src="assets/images/logo.svg" alt="RubyBug Apps" class="h-8 w-auto">
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">
+              Centralized eCommerce management solutions designed to simplify multi-store operations.
+            </p>
+            <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-gray-400 font-mono">
+              <span>Systems: Operational</span>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">PRODUCT</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="features.html" class="hover:text-white transition-colors">Features</a></li>
+              <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="integrations.html" class="hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">COMPANY</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mailto:aissatalyah524@hotmail.com" class="hover:text-white transition-colors">aissatalyah524@hotmail.com</a></li>
+            </ul>
+            <div class="mt-4 text-xs text-gray-500 font-mono leading-relaxed">
+              1001 S MAIN ST<br>
+              STE 600<br>
+              KALISPELL, MT 59901-1498
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">LEGAL & TRUST</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="data-deletion.html" class="hover:text-white transition-colors">Data Deletion Policy</a></li>
+              <li><a href="security-policy.html" class="hover:text-white transition-colors">Security Policy</a></li>
+              <li><a href="security-report.html" class="text-white font-medium">Incident Reporting</a></li>
+              <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-mono">
+          <p>&copy; <span id="year">2026</span> RubyBug LLC. All rights reserved.</p>
+          <p>RubyBug Apps is an independent multi-store management platform.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.remove('py-8', 'bg-transparent');
+      } else {
+        nav.classList.remove('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.add('py-8', 'bg-transparent');
+      }
+    });
+
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobilePanel = document.getElementById('mobile-nav-panel');
+    if (mobileToggle && mobilePanel) {
+      mobileToggle.addEventListener('click', () => mobilePanel.classList.toggle('hidden'));
+    }
+
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+    // Incident Form Dispatch Handler
+    const incidentForm = document.getElementById('incident-form');
+    const msgEl = document.getElementById('incident-msg');
+
+    if (incidentForm) {
+      incidentForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('reporter-name').value.trim();
+        const email = document.getElementById('reporter-email').value.trim();
+        const severity = document.getElementById('severity').value;
+        const component = document.getElementById('affected-system').value.trim();
+        const desc = document.getElementById('description').value.trim();
+
+        if (!name || !email || !component || !desc) {
+          msgEl.className = 'text-xs p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 block';
+          msgEl.textContent = 'Please fill out all mandatory fields before dispatching the incident report.';
+          return;
+        }
+
+        const subject = encodeURIComponent(`[SECURITY INCIDENT - ${severity.toUpperCase()}] ${component}`);
+        const body = encodeURIComponent(
+          `SECURITY INCIDENT REPORT TO RUBYBUG LLC\n` +
+          `======================================\n` +
+          `Reporter: ${name}\n` +
+          `Reporter Email: ${email}\n` +
+          `Severity: ${severity}\n` +
+          `Target Component: ${component}\n` +
+          `Timestamp: ${new Date().toISOString()}\n\n` +
+          `DETAILED REPRODUCTION & IMPACT:\n` +
+          `${desc}\n\n` +
+          `--\nDispatched from https://rubybugllc.com/security-report.html`
+        );
+
+        msgEl.className = 'text-xs p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 block';
+        msgEl.textContent = 'Preparing email dispatch... Opening your default email client to send encrypted report.';
+
+        window.location.href = `mailto:aissatalyah524@hotmail.com?subject=${subject}&body=${body}`;
+      });
+    }
+  </script>
+</body>
+</html>

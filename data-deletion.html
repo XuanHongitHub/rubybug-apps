@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Deletion Policy | RubyBug Apps</title>
+  <meta name="description" content="Step-by-step instructions for eCommerce merchants to request permanent data deletion and right-to-erasure processing from RubyBug LLC.">
+  <link rel="canonical" href="https://rubybugllc.com/data-deletion.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RubyBug Apps">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Data Deletion Policy | RubyBug Apps">
+  <meta property="og:description" content="Step-by-step instructions for eCommerce merchants to request permanent data deletion and right-to-erasure processing from RubyBug LLC.">
+  <meta property="og:url" content="https://rubybugllc.com/data-deletion.html">
+  <meta property="og:image" content="https://rubybugllc.com/assets/images/logo.svg">
+  <meta name="theme-color" content="#050505">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Tailwind CSS & Iconify -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+      color: white;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      background-image: url("assets/images/noise.svg");
+    }
+  </style>
+</head>
+<body class="selection:bg-[#FF4500] selection:text-white">
+  <div class="min-h-screen bg-[#050505]">
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-8">
+      <div class="container mx-auto px-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity">
+          <img src="assets/images/logo.svg" alt="RubyBug Apps" class="h-9 w-auto">
+        </a>
+        
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="index.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Home</a>
+          <a href="features.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Features</a>
+          <a href="how-it-works.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">How It Works</a>
+          <a href="integrations.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">Integrations</a>
+          <a href="about.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">About Us</a>
+          <a href="faq.html" class="text-sm text-gray-400 hover:text-white transition-colors duration-300">FAQ</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="contact.html" class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium bg-white text-black hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-[0_4px_20px_rgba(255,255,255,0.15)]">
+            Contact Us
+          </a>
+          <button id="mobile-menu-toggle" type="button" class="lg:hidden w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10" aria-label="Toggle Navigation">
+            <iconify-icon icon="lucide:menu" class="text-xl"></iconify-icon>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown -->
+      <div id="mobile-nav-panel" class="hidden lg:hidden bg-[#0a0a0a]/95 border-b border-white/10 px-6 py-6 mt-4 backdrop-blur-xl">
+        <div class="flex flex-col space-y-4">
+          <a href="index.html" class="text-base text-gray-400 hover:text-white">Home</a>
+          <a href="features.html" class="text-base text-gray-400 hover:text-white">Features</a>
+          <a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a>
+          <a href="integrations.html" class="text-base text-gray-400 hover:text-white">Integrations</a>
+          <a href="about.html" class="text-base text-gray-400 hover:text-white">About Us</a>
+          <a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a>
+          <a href="contact.html" class="text-base text-[#FF4500] font-semibold">Contact Our Team &rarr;</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="relative pt-40 pb-20 overflow-hidden border-b border-white/5">
+      <div class="container mx-auto px-6 text-center max-w-4xl relative z-10">
+        <div class="reveal mb-6 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-xs uppercase tracking-widest text-white/90">
+          <span>GDPR &bull; CCPA &bull; Marketplace Partner Compliance</span>
+        </div>
+        <h1 class="reveal text-5xl md:text-7xl font-medium tracking-tight mb-8 font-serif text-white">
+          Data Deletion Policy. <br />
+          <span class="italic font-light text-[#FF4500]">Instructions & SLA.</span>
+        </h1>
+        <p class="reveal text-sm text-gray-400 max-w-xl mx-auto font-mono" style="transition-delay: 150ms;">
+          Applicable to all RubyBug Apps integrations &bull; Updated November 18, 2026
+        </p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-24 relative">
+      <div class="container mx-auto px-6 max-w-4xl space-y-12 text-gray-300 leading-relaxed font-light text-sm">
+
+        <!-- Commitment Card -->
+        <div class="reveal p-8 rounded-3xl bg-[#111] border border-white/10 space-y-4">
+          <div class="flex items-center gap-3 text-[#FF4500]">
+            <iconify-icon icon="lucide:trash-2" class="text-2xl"></iconify-icon>
+            <h3 class="text-base font-semibold text-white uppercase tracking-wider font-mono">Right to Erasure Commitment</h3>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            In compliance with global data privacy frameworks (GDPR Article 17, CCPA/CPRA) and marketplace partner developer agreements (including TikTok Shop Open API Data Protection Standards), RubyBug LLC provides clear, automated, and manual mechanisms to completely erase all merchant and customer data upon request or deauthorization.
+          </p>
+        </div>
+
+        <!-- Section 1: Automatic Deletion -->
+        <div class="reveal space-y-4">
+          <h2 class="text-2xl font-serif text-white">1. Automatic Deletion upon App Uninstallation</h2>
+          <p>
+            When a merchant disconnects, uninstalls, or revokes permissions for RubyBug Apps inside their marketplace seller portal (e.g. TikTok Shop Seller Center &gt; My Apps &gt; Unauthorize):
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+            <div class="p-5 rounded-2xl bg-[#0a0a0a] border border-white/10 space-y-2">
+              <span class="text-xs font-mono text-[#FF4500] font-bold block">01 &bull; Instant</span>
+              <strong class="text-white block text-sm">Token Invalidation</strong>
+              <p class="text-xs text-gray-400">All OAuth access tokens and refresh tokens are immediately revoked and rendered inoperable.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-[#0a0a0a] border border-white/10 space-y-2">
+              <span class="text-xs font-mono text-[#FF4500] font-bold block">02 &bull; 48 Hours</span>
+              <strong class="text-white block text-sm">Database Purge</strong>
+              <p class="text-xs text-gray-400">All synchronized store caches, fulfillment queues, and mapping tables are permanently removed from database storage.</p>
+            </div>
+            <div class="p-5 rounded-2xl bg-[#0a0a0a] border border-white/10 space-y-2">
+              <span class="text-xs font-mono text-[#FF4500] font-bold block">03 &bull; 30 Days</span>
+              <strong class="text-white block text-sm">Backup Rotation</strong>
+              <p class="text-xs text-gray-400">Encrypted transactional backup snapshots expire and are overwritten automatically.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Automated Marketplace Erasure Callbacks -->
+        <div class="reveal space-y-4">
+          <h2 class="text-2xl font-serif text-white">2. Webhook & Automated Marketplace Callbacks</h2>
+          <p>
+            RubyBug Apps actively listens for official platform deauthorization webhooks (such as TikTok Shop Data Deletion Webhooks / Deauthorization Callbacks). Upon receipt of an automated platform erasure payload, our system executes automated cryptographic shredding of the corresponding merchant record without requiring manual merchant action.
+          </p>
+        </div>
+
+        <!-- Section 3: Manual Deletion Request Instructions -->
+        <div class="reveal space-y-4">
+          <h2 class="text-2xl font-serif text-white">3. Manual Data Deletion Instructions</h2>
+          <p>
+            Merchants or authorized account holders may submit a manual data deletion request at any time by following these simple steps:
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#111] border border-white/10">
+              <span class="w-8 h-8 rounded-full bg-[#FF4500]/20 text-[#FF4500] flex items-center justify-center font-mono font-bold text-sm shrink-0">1</span>
+              <div>
+                <strong class="text-white block mb-1">Send Written Request</strong>
+                <p class="text-xs text-gray-400">
+                  Send an email from your registered account email address to <a href="mailto:aissatalyah524@hotmail.com" class="text-[#FF4500] hover:underline">aissatalyah524@hotmail.com</a> with the subject line: <code class="px-2 py-0.5 rounded bg-black text-[#FF4500]">DATA DELETION REQUEST - [Your Store Name / Seller ID]</code>.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#111] border border-white/10">
+              <span class="w-8 h-8 rounded-full bg-[#FF4500]/20 text-[#FF4500] flex items-center justify-center font-mono font-bold text-sm shrink-0">2</span>
+              <div>
+                <strong class="text-white block mb-1">Identity & Account Verification</strong>
+                <p class="text-xs text-gray-400">
+                  Within 24 business hours, our privacy team will acknowledge receipt and verify store ownership to protect against unauthorized deletion tampering.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-5 rounded-2xl bg-[#111] border border-white/10">
+              <span class="w-8 h-8 rounded-full bg-[#FF4500]/20 text-[#FF4500] flex items-center justify-center font-mono font-bold text-sm shrink-0">3</span>
+              <div>
+                <strong class="text-white block mb-1">Execution & Deletion Certificate</strong>
+                <p class="text-xs text-gray-400">
+                  All associated records, access tokens, and transactional metadata will be irreversibly erased within <strong>30 calendar days</strong>. We issue a formal written confirmation email once the process is complete.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Scope of Data Deleted -->
+        <div class="reveal space-y-4">
+          <h2 class="text-2xl font-serif text-white">4. Scope of Data Subject to Deletion</h2>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="border-b border-white/10 text-white/50 font-mono">
+                  <th class="py-3 px-4">Data Category</th>
+                  <th class="py-3 px-4">Specific Elements</th>
+                  <th class="py-3 px-4">Action Taken</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-white/5 text-gray-400">
+                <tr>
+                  <td class="py-3 px-4 text-white font-medium">OAuth Credentials</td>
+                  <td class="py-3 px-4">Access tokens, refresh tokens, seller authorization scopes</td>
+                  <td class="py-3 px-4 text-emerald-400">Permanently purged immediately</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 text-white font-medium">Store Metadata</td>
+                  <td class="py-3 px-4">Store identifier, seller profile name, channel identifiers</td>
+                  <td class="py-3 px-4 text-emerald-400">Deleted within 48 hours</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 text-white font-medium">Order Sync Caches</td>
+                  <td class="py-3 px-4">Order references, SKU mappings, sync timestamps</td>
+                  <td class="py-3 px-4 text-emerald-400">Irreversibly shredded</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4 text-white font-medium">Support Correspondence</td>
+                  <td class="py-3 px-4">Helpdesk messages, inquiry logs, communication history</td>
+                  <td class="py-3 px-4 text-emerald-400">Erased unless mandated by statutory audit law</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Section 5: Retention Exceptions -->
+        <div class="reveal space-y-4">
+          <h2 class="text-2xl font-serif text-white">5. Statutory Retention Exceptions</h2>
+          <p>
+            In narrow circumstances, certain records may be retained temporarily solely to comply with federal or state statutory obligations (such as tax records, anti-fraud compliance, or legal disputes). Such retained records are quarantined, encrypted, and isolated from all operational query paths until the statutory retention window expires.
+          </p>
+        </div>
+
+        <!-- Section 6: Official Deletion Contact -->
+        <div class="reveal space-y-4">
+          <h2 class="text-2xl font-serif text-white">6. Data Deletion Inquiries</h2>
+          <div class="p-6 rounded-2xl bg-[#111] border border-white/10 space-y-2 font-mono text-xs">
+            <p><span class="text-white/50">Company:</span> RubyBug LLC</p>
+            <p><span class="text-white/50">Mailing Address:</span> 1001 S MAIN ST, STE 600, KALISPELL, MT 59901-1498</p>
+            <p><span class="text-white/50">Dedicated Deletion Inbox:</span> <a href="mailto:aissatalyah524@hotmail.com" class="text-[#FF4500] hover:underline">aissatalyah524@hotmail.com</a></p>
+            <p><span class="text-white/50">Average Response Time:</span> Within 24 business hours</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 border-t border-white/5 bg-[#050505] relative overflow-hidden">
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="mb-16 select-none pointer-events-none">
+          <h2 class="text-[12vw] leading-[0.8] tracking-tighter text-white/5 font-bold font-serif">
+            RUBYBUG
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div class="md:col-span-1">
+            <div class="mb-6">
+              <img src="assets/images/logo.svg" alt="RubyBug Apps" class="h-8 w-auto">
+            </div>
+            <p class="text-sm text-gray-400 leading-relaxed mb-6">
+              Centralized eCommerce management solutions designed to simplify multi-store operations.
+            </p>
+            <div class="inline-flex items-center px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-[11px] text-gray-400 font-mono">
+              <span>Systems: Operational</span>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">PRODUCT</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="features.html" class="hover:text-white transition-colors">Features</a></li>
+              <li><a href="how-it-works.html" class="hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="integrations.html" class="hover:text-white transition-colors">Integrations</a></li>
+              <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">COMPANY</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+              <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="mailto:aissatalyah524@hotmail.com" class="hover:text-white transition-colors">aissatalyah524@hotmail.com</a></li>
+            </ul>
+            <div class="mt-4 text-xs text-gray-500 font-mono leading-relaxed">
+              1001 S MAIN ST<br>
+              STE 600<br>
+              KALISPELL, MT 59901-1498
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs uppercase tracking-widest text-white/40 font-mono mb-4">LEGAL & TRUST</p>
+            <ul class="space-y-2 text-sm text-gray-400">
+              <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="data-deletion.html" class="text-white font-medium">Data Deletion Policy</a></li>
+              <li><a href="security-policy.html" class="hover:text-white transition-colors">Security Policy</a></li>
+              <li><a href="security-report.html" class="hover:text-white transition-colors">Incident Reporting</a></li>
+              <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-mono">
+          <p>&copy; <span id="year">2026</span> RubyBug LLC. All rights reserved.</p>
+          <p>RubyBug Apps is an independent multi-store management platform.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.remove('py-8', 'bg-transparent');
+      } else {
+        nav.classList.remove('py-4', 'bg-[#050505]/85', 'backdrop-blur-md', 'border-b', 'border-white/10', 'shadow-2xl');
+        nav.classList.add('py-8', 'bg-transparent');
+      }
+    });
+
+    const mobileToggle = document.getElementById('mobile-menu-toggle');
+    const mobilePanel = document.getElementById('mobile-nav-panel');
+    if (mobileToggle && mobilePanel) {
+      mobileToggle.addEventListener('click', () => mobilePanel.classList.toggle('hidden'));
+    }
+
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>
