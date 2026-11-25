@@ -9,7 +9,8 @@ const ago = t => { const m = Math.max(0, Math.round((Date.now() - t) / 60000)); 
 const pct = (a, b) => b ? Math.round((a - b) / b * 100) : 0;
 const CH = { tiktok: ['TikTok Shop', 'TT', '#FF4500'], shopify: ['Shopify', 'SH', '#e4e4e7'], amazon: ['Amazon', 'AM', '#71717a'] };
 const ST = { awaiting_shipment: ['Awaiting shipment', 'warn'], in_transit: ['In transit', 'info'], delivered: ['Delivered', 'ok'], completed: ['Completed', 'ok'], cancelled: ['Cancelled', 'err'] };
-const SCOPES = [['seller.shop.info', 'Shop name, region and shop ID to identify the connected store'],
+const SCOPES = [['seller.authorization.info', 'List the shops the seller authorized and obtain the shop cipher required by every API call'],
+  ['seller.shop.info', 'Shop name, region and shop ID to identify the connected store'],
   ['seller.order.info', 'Orders to show and fulfil them; buyer contact fields are masked and encrypted'],
   ['seller.product.basic', 'Product titles, SKUs and prices for the product list'],
   ['seller.logistics', 'Warehouses and shipping providers for shipments']];
@@ -334,12 +335,12 @@ pages.stores = () => `${offlineNote()}${pagehead('Stores', 'Connected sales chan
       <dt>Orders · 30 days</dt><dd class="num">${on ? st.orders.filter(o => o.channel === s.channel).length : '—'}</dd></dl>`}
     <div class="row">${on ? `<button class="btn sm" data-sync="${s.id}" ${syncing ? 'disabled' : ''}>${syncing ? '<span class="spin"></span>Syncing' : I(IC.sync) + 'Sync now'}</button><button class="btn sm danger" data-disc="${s.id}">Disconnect</button>` : `<button class="btn sm" data-reconn="${s.id}">Reconnect</button>`}</div>
   </div>`; }).join('')}</div>
-  ${st.stores.some(s => s.channel === 'tiktok' && s.status === 'connected') ? `<section class="card mt-l"><div class="card-h"><div><h2>TikTok Shop permissions</h2><div class="sub">Granted by the seller during authorization · Ruby Home Goods</div></div><span class="badge ok">4 granted</span></div>
+  ${st.stores.some(s => s.channel === 'tiktok' && s.status === 'connected') ? `<section class="card mt-l"><div class="card-h"><div><h2>TikTok Shop permissions</h2><div class="sub">Granted by the seller during authorization · Ruby Home Goods</div></div><span class="badge ok">${SCOPES.length} granted</span></div>
     <div class="scopes">${SCOPES.map(([k, d]) => `<div>${I(IC.check)}<div><code>${k}</code><div class="muted small">${d}</div></div></div>`).join('')}</div>
     <p class="faint small" style="margin:14px 0 0">Access tokens are encrypted at rest. Disconnecting revokes them and deletes the store’s synced data within 48 hours.</p></section>` : ''}`;
 
 function connectFlow(storeId) {
-  const p = layer(`<div class="row" style="gap:14px"><span class="ch lg tiktok">TT</span><div><h3 id="dlg-t">Connect TikTok Shop</h3><div class="faint small">OAuth authorization · 4 permissions</div></div></div>
+  const p = layer(`<div class="row" style="gap:14px"><span class="ch lg tiktok">TT</span><div><h3 id="dlg-t">Connect TikTok Shop</h3><div class="faint small">OAuth authorization · ${SCOPES.length} permissions</div></div></div>
     <p class="muted small">The seller signs in to TikTok Shop and approves these permissions. RubyBug Apps receives an authorization code and exchanges it for access tokens, which are stored encrypted.</p>
     <div class="scopes">${SCOPES.map(([k, d]) => `<div>${I(IC.check)}<div><code>${k}</code><div class="muted small">${d}</div></div></div>`).join('')}</div>
     <p class="faint small">Demo environment: authorization is simulated with sample data.</p>
