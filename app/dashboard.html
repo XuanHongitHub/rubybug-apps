@@ -4,8 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#050505">
 <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 <title>RubyBug Apps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
 <script src="auth.js"></script>
 <script>if (!RB_AUTH.session()) location.replace('index.html');</script>
@@ -13,14 +17,18 @@
 <body>
 <div class="shell">
   <aside class="side" id="side">
-    <div class="brand"><span class="logo">RB</span>RubyBug Apps</div>
+    <a href="#/dashboard" aria-label="Dashboard"><img class="logo" src="/assets/images/logo.svg" alt="RubyBug"></a>
     <nav class="nav" id="nav" aria-label="Main"></nav>
-    <div class="foot">RubyBug LLC · v1.0<br><a href="/privacy-policy.html">Privacy</a></div>
+    <div class="workspace">
+      <div class="who"><span class="avatar">DS</span><div><strong>Demo Seller</strong><span>demo@rubybugllc.com</span></div></div>
+      <div class="legal"><a href="/privacy-policy.html">Privacy</a><a href="/security-policy.html">Security</a><span class="faint small">v1.0</span></div>
+    </div>
   </aside>
+  <div class="scrim" id="scrim"></div>
   <div class="main">
     <header class="top">
-      <button class="btn sm menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-      <h1 id="title">Dashboard</h1>
+      <button class="btn icon ghost menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="side" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="crumb"><span class="ws">Ruby Home Goods</span><span class="sep">/</span><span id="title">Dashboard</span></div>
       <span class="spacer"></span>
       <select class="store-pick" id="storePick" aria-label="Store filter"></select>
       <span class="badge accent" title="Demo account with sample data">Sample data</span>

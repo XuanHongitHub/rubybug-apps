@@ -4,38 +4,64 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#050505">
 <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 <title>Sign in · RubyBug Apps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
-<main class="login">
-  <form class="login-card" id="f" novalidate>
-    <div class="brand"><span class="logo">RB</span>RubyBug Apps</div>
-    <p class="muted" style="margin:8px 0 6px">Multi-channel order, product and inventory management for TikTok Shop sellers.</p>
-    <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="username" required></div>
-    <div class="field"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div>
-    <div class="form-error" id="err" role="alert"></div>
-    <button class="btn primary" style="width:100%;justify-content:center;height:40px" id="go">Sign in</button>
-    <div class="hint">Demo account<br><strong>demo@rubybugllc.com</strong> · <strong>RubyBugDemo#2026</strong>
-      <div style="margin-top:6px"><button type="button" class="btn sm" id="fill">Fill demo account</button></div></div>
-    <p class="faint" style="font-size:12px;margin:16px 0 0">
-      <a href="/privacy-policy.html">Privacy policy</a> · <a href="mailto:aissatalyah524@hotmail.com">Security contact</a> · <a href="/security-policy.html">Security policy</a> · <a href="/">rubybugllc.com</a></p>
-  </form>
+<main class="auth">
+  <section class="auth-art" aria-hidden="true">
+    <img src="/assets/images/auth-scene.jpg" alt="">
+    <div class="auth-copy">
+      <div class="kicker">RubyBug Apps</div>
+      <h1>Every store,<br><em>one quiet console.</em></h1>
+      <div class="auth-facts">
+        <div><b>3</b>Sales channels</div>
+        <div><b>1</b>Order queue</div>
+        <div><b>4</b>TikTok Shop scopes</div>
+      </div>
+    </div>
+  </section>
+  <section class="auth-panel">
+    <form class="auth-form" id="f" novalidate>
+      <a href="/" aria-label="rubybugllc.com"><img class="logo" src="/assets/images/logo.svg" alt="RubyBug"></a>
+      <h2>Sign in</h2>
+      <p class="lead">Orders, products and inventory for TikTok Shop sellers.</p>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="username" required placeholder="name@company.com"></div>
+      <div class="field"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div>
+      <div class="form-error" id="err" role="alert"></div>
+      <button class="btn primary" id="go">Sign in</button>
+      <div class="demo-box">
+        <span class="k">Demo account</span>
+        <div><div class="mono">demo@rubybugllc.com</div><div class="mono">RubyBugDemo#2026</div></div>
+        <button type="button" class="btn sm" id="fill">Fill demo account</button>
+      </div>
+      <nav class="legal" aria-label="Legal">
+        <a href="/privacy-policy.html">Privacy policy</a><a href="/security-policy.html">Security policy</a>
+        <a href="mailto:aissatalyah524@hotmail.com">Security contact</a><a href="/">rubybugllc.com</a>
+      </nav>
+    </form>
+  </section>
 </main>
 <script src="auth.js"></script>
 <script>
   if (RB_AUTH.session()) location.replace('dashboard.html');
   const $ = id => document.getElementById(id);
-  $('fill').onclick = () => { $('email').value = RB_AUTH.DEMO_EMAIL; $('pw').value = RB_AUTH.DEMO_PW; $('go').focus(); };
+  const setErr = (msg, field) => { $('err').textContent = msg; ['email', 'pw'].forEach(k => $(k).setAttribute('aria-invalid', msg && (!field || field === k) ? 'true' : 'false')); };
+  $('fill').onclick = () => { $('email').value = RB_AUTH.DEMO_EMAIL; $('pw').value = RB_AUTH.DEMO_PW; setErr(''); $('go').focus(); };
   $('f').onsubmit = async e => {
-    e.preventDefault(); $('err').textContent = '';
-    if (!$('email').value || !$('pw').value) { $('err').textContent = 'Email and password are required.'; return; }
-    $('go').disabled = true; $('go').textContent = 'Signing in…';
+    e.preventDefault(); setErr('');
+    if (!$('email').value) return setErr('Email is required.', 'email');
+    if (!$('pw').value) return setErr('Password is required.', 'pw');
+    $('go').disabled = true; $('go').innerHTML = '<span class="spin"></span>Signing in';
     const ok = await RB_AUTH.login($('email').value.trim(), $('pw').value);
     if (ok) return location.replace('dashboard.html');
     $('go').disabled = false; $('go').textContent = 'Sign in';
-    $('err').textContent = 'Incorrect email or password.';
+    setErr('Incorrect email or password.');
   };
 </script>
 </body>
