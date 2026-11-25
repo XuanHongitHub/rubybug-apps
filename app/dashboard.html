@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<title>RubyBug Apps</title>
+<link rel="stylesheet" href="app.css">
+<script src="auth.js"></script>
+<script>if (!RB_AUTH.session()) location.replace('index.html');</script>
+</head>
+<body>
+<div class="shell">
+  <aside class="side" id="side">
+    <div class="brand"><span class="logo">RB</span>RubyBug Apps</div>
+    <nav class="nav" id="nav" aria-label="Main"></nav>
+    <div class="foot">RubyBug LLC · v1.0<br><a href="/privacy-policy.html">Privacy</a></div>
+  </aside>
+  <div class="main">
+    <header class="top">
+      <button class="btn sm menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <h1 id="title">Dashboard</h1>
+      <span class="spacer"></span>
+      <select class="store-pick" id="storePick" aria-label="Store filter"></select>
+      <span class="badge accent" title="Demo account with sample data">Sample data</span>
+      <span class="avatar" title="Demo Seller">DS</span>
+    </header>
+    <main class="content" id="view" tabindex="-1"></main>
+  </div>
+</div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

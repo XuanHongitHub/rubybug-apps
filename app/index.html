@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+<title>Sign in · RubyBug Apps</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<main class="login">
+  <form class="login-card" id="f" novalidate>
+    <div class="brand"><span class="logo">RB</span>RubyBug Apps</div>
+    <p class="muted" style="margin:8px 0 6px">Multi-channel order, product and inventory management for TikTok Shop sellers.</p>
+    <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="username" required></div>
+    <div class="field"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div>
+    <div class="form-error" id="err" role="alert"></div>
+    <button class="btn primary" style="width:100%;justify-content:center;height:40px" id="go">Sign in</button>
+    <div class="hint">Demo account<br><strong>demo@rubybugllc.com</strong> · <strong>RubyBugDemo#2026</strong>
+      <div style="margin-top:6px"><button type="button" class="btn sm" id="fill">Fill demo account</button></div></div>
+    <p class="faint" style="font-size:12px;margin:16px 0 0">
+      <a href="/privacy-policy.html">Privacy policy</a> · <a href="mailto:aissatalyah524@hotmail.com">Security contact</a> · <a href="/security-policy.html">Security policy</a> · <a href="/">rubybugllc.com</a></p>
+  </form>
+</main>
+<script src="auth.js"></script>
+<script>
+  if (RB_AUTH.session()) location.replace('dashboard.html');
+  const $ = id => document.getElementById(id);
+  $('fill').onclick = () => { $('email').value = RB_AUTH.DEMO_EMAIL; $('pw').value = RB_AUTH.DEMO_PW; $('go').focus(); };
+  $('f').onsubmit = async e => {
+    e.preventDefault(); $('err').textContent = '';
+    if (!$('email').value || !$('pw').value) { $('err').textContent = 'Email and password are required.'; return; }
+    $('go').disabled = true; $('go').textContent = 'Signing in…';
+    const ok = await RB_AUTH.login($('email').value.trim(), $('pw').value);
+    if (ok) return location.replace('dashboard.html');
+    $('go').disabled = false; $('go').textContent = 'Sign in';
+    $('err').textContent = 'Incorrect email or password.';
+  };
+</script>
+</body>
+</html>
